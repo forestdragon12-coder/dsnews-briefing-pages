@@ -226,6 +226,57 @@
     .errors h2 {
       margin-top: 0;
     }
+    .archive-nav {
+      margin: 14px 0 18px;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 12px;
+    }
+    .archive-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .archive-links {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .pill {
+      display: inline-flex;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .pill:hover {
+      text-decoration: underline;
+    }
+    .archive-body {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .archive-label {
+      font-size: 12px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .archive-select {
+      flex: 1;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: #fff;
+      font-size: 13px;
+    }
     @media (max-width: 720px) {
       main {
         padding: 18px 12px 40px;
@@ -254,8 +305,37 @@
   <main>
     <header class="report-header">
       <h1>DS News Briefing</h1>
-      <p class="generated">생성 시각: 2026-05-19 10:47 · 기사 20개 · 기사별 요약 최대 5줄</p>
+      <p class="generated">생성 시각: 2026-05-19 11:45 · 기사 20개 · 기사별 요약 최대 5줄</p>
     </header>
+    
+      <section class="archive-nav">
+        <div class="archive-head">
+          <strong>아카이브</strong>
+          <div class="archive-links">
+            <a class="pill" href="https://forestdragon12-coder.github.io/dsnews-briefing-pages/latest.html">latest</a>
+            <a class="pill" href="https://forestdragon12-coder.github.io/dsnews-briefing-pages/wiki/index.html">wiki</a>
+          </div>
+        </div>
+        <div class="archive-body">
+          <label class="archive-label" for="archiveSelect">날짜/시간 선택</label>
+          <select id="archiveSelect" class="archive-select">
+            <option value="">선택하세요…</option>
+            <option value="https://forestdragon12-coder.github.io/dsnews-briefing-pages/briefings/2026/05/19/260519_DS%EB%89%B4%EC%8A%A4%EB%B8%8C%EB%A6%AC%ED%95%91_%EC%95%84%EC%B9%A8.html">2026-05-19 · 260519 아침</option>
+<option value="https://forestdragon12-coder.github.io/dsnews-briefing-pages/briefings/2026/05/18/260518_DS%EB%89%B4%EC%8A%A4%EB%B8%8C%EB%A6%AC%ED%95%91_%EC%95%84%EC%B9%A8.html">2026-05-18 · 260518 아침</option>
+          </select>
+        </div>
+      </section>
+      <script>
+        (function() {
+          var el = document.getElementById("archiveSelect");
+          if (!el) return;
+          el.addEventListener("change", function() {
+            var url = el.value;
+            if (url) window.location.href = url;
+          });
+        })();
+      </script>
+    
     <section class="top-five">
       <strong>오늘 먼저 볼 5가지 이슈</strong>
       <div class="priority-list">
@@ -263,10 +343,10 @@
             <div class="priority-rank">01</div>
             <div class="priority-body">
               <div class="meta">
-                <span>미국경제</span>
-                <a href="#article-11">관련 기사 11</a>
+                <span>부동산/정책</span>
+                <a href="#article-06">관련 기사 06</a>
               </div>
-              <p>미국 소비 여력 점검: 개인소득과 지출 흐름이 물가 압력에 주는 신호</p>
+              <p>주택 공급 변화: 신규 공급 규모와 입지별 시장 영향을 확인할 필요</p>
             </div>
           </article>
           
@@ -275,10 +355,10 @@
             <div class="priority-rank">02</div>
             <div class="priority-body">
               <div class="meta">
-                <span>미국경제</span>
-                <a href="#article-12">관련 기사 12</a>
+                <span>부동산/정책</span>
+                <a href="#article-07">관련 기사 07</a>
               </div>
-              <p>미국 소비 여력 점검: 개인소득과 지출 흐름이 물가 압력에 주는 신호</p>
+              <p>전세시장 급랭: 규제 여파와 공급 부족으로 거래 유동성이 약해지는 신호</p>
             </div>
           </article>
           
@@ -287,10 +367,10 @@
             <div class="priority-rank">03</div>
             <div class="priority-body">
               <div class="meta">
-                <span>부동산/정책</span>
-                <a href="#article-05">관련 기사 05</a>
+                <span>미국경제</span>
+                <a href="#article-09">관련 기사 09</a>
               </div>
-              <p>핵심 변화: 서울 아파트 매물 잠김이 주요 이슈로 부상함</p>
+              <p>미국 성장률 확인: GDP 흐름이 금리, 환율, 위험자산 판단에 주는 영향</p>
             </div>
           </article>
           
@@ -299,10 +379,10 @@
             <div class="priority-rank">04</div>
             <div class="priority-body">
               <div class="meta">
-                <span>부동산/정책</span>
-                <a href="#article-06">관련 기사 06</a>
+                <span>미국경제</span>
+                <a href="#article-10">관련 기사 10</a>
               </div>
-              <p>핵심 변화: 서울 아파트 매물 잠김이 주요 이슈로 부상함</p>
+              <p>미국 지역 경기 격차: 카운티 GDP와 소득 흐름이 소비 여력을 보여주는 신호</p>
             </div>
           </article>
           
@@ -311,10 +391,10 @@
             <div class="priority-rank">05</div>
             <div class="priority-body">
               <div class="meta">
-                <span>국내경제/정책</span>
-                <a href="#article-01">관련 기사 01</a>
+                <span>AI 영향</span>
+                <a href="#article-18">관련 기사 18</a>
               </div>
-              <p>핵심 변화: 국내외 금리와 채권시장 부담이 주요 이슈로 부상함</p>
+              <p>핵심 변화: AI 에이전트 확산이 주요 이슈로 부상함</p>
             </div>
           </article>
           </div>
@@ -350,17 +430,17 @@
             <div class="item-index">02</div>
             <div class="item-body">
               <div class="meta">
-                <span>매일경제 경제</span>
-                <span>Mon, 18 May 2026 17:39:16 +09:00</span>
+                <span>이데일리</span>
+                <span>발행일 확인 필요</span>
               </div>
-              <h3><a href="https://www.mk.co.kr/news/economy/12051199">공무원 통근버스·국가 금연지원 … 정부, 7.7조 지출 구조조정</a></h3>
-              <ul><li><span class="summary-label">핵심 변화</span><span>정부 지원과 가계 부담 완화가 주요 이슈로 부상함</span></li>
-<li><span class="summary-label">배경</span><span>정부 지원과 가계 부담 완화는 물가, 금리, 정책 자금이 동시에 움직일 때 커지는 경제 신호로 작용함</span></li>
-<li><span class="summary-label">근거</span><span>기사에는 7000억원, 18일 같은 수치나 시점이 제시됨</span></li>
+              <h3><a href="https://www.edaily.co.kr/News/Read?newsId=04542806645450232&amp;mediaCodeNo=257">“상대적 저평가”…길음·장위뉴타운 앞세운 성북구 뜬다 최근 성북구 아파트 가격이 크게 오르며 서울 부동산 시장의 새로운 상승 축으로 부상하고 있다. 도심과 가까운 입지...</a></h3>
+              <ul><li><span class="summary-label">핵심 변화</span><span>“상대적 저평가”…길음·장위뉴타운 앞세운 성북구 뜬다 최근 성북구 아파트 가격이 크게 오르며 서울 부동산 시장의 새로운 상승...이 주요 이슈로 부상함</span></li>
+<li><span class="summary-label">배경</span><span>“상대적 저평가”…길음·장위뉴타운 앞세운 성북구 뜬다 최근 성북구 아파트 가격이 크게 오르며 서울 부동산 시장의 새로운 상승...은 물가, 금리, 정책 자금이 동시에 움직일 때 커지는 경제 신호로 작용함</span></li>
+<li><span class="summary-label">근거</span><span>기사에는 15억원 같은 수치나 시점이 제시됨</span></li>
 <li><span class="summary-label">파급효과</span><span>대출자, 투자자, 사업자의 이자 비용과 현금흐름 부담을 높임</span></li>
 <li><span class="summary-label">읽는 의미</span><span>생활비, 대출, 투자 비용 압력이 어디서 오는지 보여줌</span></li></ul>
               <p class="focus">금리, 물가, 정책 자금 흐름 확인</p>
-              <p class="quality">수치 근거 있음 · 검증 출처</p>
+              <p class="quality">의사결정 영향 있음 · 수치 근거 있음</p>
             </div>
           </article>
           
@@ -368,17 +448,17 @@
             <div class="item-index">03</div>
             <div class="item-body">
               <div class="meta">
-                <span>매일경제 경제</span>
-                <span>Mon, 18 May 2026 17:52:31 +09:00</span>
+                <span>이데일리</span>
+                <span>발행일 확인 필요</span>
               </div>
-              <h3><a href="https://www.mk.co.kr/news/economy/12051263">[단독] SK실트론 인수 앞둔 두산에 産銀, 2조5000억 금융 주선</a></h3>
-              <ul><li><span class="summary-label">핵심 변화</span><span>SK실트론 인수 앞둔 두산에 産銀, 2조5000억 금융 주선이 주요 이슈로 부상함</span></li>
-<li><span class="summary-label">배경</span><span>SK실트론 인수 앞둔 두산에 産銀, 2조5000억 금융 주선은 물가, 금리, 정책 자금이 동시에 움직일 때 커지는 경제 신호로 작용함</span></li>
-<li><span class="summary-label">근거</span><span>기사에는 5000억원 같은 수치나 시점이 제시됨</span></li>
+              <h3><a href="https://www.edaily.co.kr/News/Read?newsId=04546086645450232&amp;mediaCodeNo=257">강남 집값만 보다 놓친 전세 경고음 “전월세와 매매는 가격이 다른데 대체될 수 있나.”지난 12일 국토교통부 브리핑에서 이런 질문이 나왔다. 정부가 비거주 1주택자 ‘...</a></h3>
+              <ul><li><span class="summary-label">핵심 변화</span><span>강남 집값만 보다 놓친 전세 경고음 “전월세와 매매는 가격이 다른데 대체될 수 있나.”지난 12일 국토교통부 브리핑에서 이런...이 주요 이슈로 부상함</span></li>
+<li><span class="summary-label">배경</span><span>강남 집값만 보다 놓친 전세 경고음 “전월세와 매매는 가격이 다른데 대체될 수 있나.”지난 12일 국토교통부 브리핑에서 이런...은 물가, 금리, 정책 자금이 동시에 움직일 때 커지는 경제 신호로 작용함</span></li>
+<li><span class="summary-label">근거</span><span>기사에는 12일 같은 수치나 시점이 제시됨</span></li>
 <li><span class="summary-label">파급효과</span><span>대출자, 투자자, 사업자의 이자 비용과 현금흐름 부담을 높임</span></li>
 <li><span class="summary-label">읽는 의미</span><span>생활비, 대출, 투자 비용 압력이 어디서 오는지 보여줌</span></li></ul>
               <p class="focus">금리, 물가, 정책 자금 흐름 확인</p>
-              <p class="quality">수치 근거 있음 · 검증 출처</p>
+              <p class="quality">의사결정 영향 있음 · 수치 근거 있음</p>
             </div>
           </article>
           
@@ -386,17 +466,17 @@
             <div class="item-index">04</div>
             <div class="item-body">
               <div class="meta">
-                <span>매일경제 경제</span>
-                <span>Mon, 18 May 2026 17:39:49 +09:00</span>
+                <span>연합뉴스 경제</span>
+                <span>Tue, 19 May 2026 11:15:00 +0900</span>
               </div>
-              <h3><a href="https://www.mk.co.kr/news/politics/12051206">[단독] “삼성전자 총파업, 최악땐 성장률 0.5%p 하락”…靑, 한은 긴급보고서 분석</a></h3>
-              <ul><li><span class="summary-label">핵심 변화</span><span>“삼성전자 총파업, 최악땐 성장률 0.5%p 하락”…靑, 한은 긴급보고서 분석이 주요 이슈로 부상함</span></li>
-<li><span class="summary-label">배경</span><span>“삼성전자 총파업, 최악땐 성장률 0.5%p 하락”…靑, 한은 긴급보고서 분석은 물가, 금리, 정책 자금이 동시에 움직일 때 커지는 경제 신호로 작용함</span></li>
-<li><span class="summary-label">근거</span><span>기사에는 0.5%, 18일 같은 수치나 시점이 제시됨</span></li>
+              <h3><a href="https://www.yna.co.kr/view/AKR20260519067700004">서울시, 청년 전세대출 이자지원 확대…소득기준 4천만→5천만원</a></h3>
+              <ul><li><span class="summary-label">핵심 변화</span><span>정부 지원과 가계 부담 완화가 주요 이슈로 부상함</span></li>
+<li><span class="summary-label">배경</span><span>정부 지원과 가계 부담 완화는 물가, 금리, 정책 자금이 동시에 움직일 때 커지는 경제 신호로 작용함</span></li>
+<li><span class="summary-label">근거</span><span>기사 본문은 정부 지원과 가계 부담 완화 관련 시장 반응과 이해관계자 움직임을 제시함</span></li>
 <li><span class="summary-label">파급효과</span><span>대출자, 투자자, 사업자의 이자 비용과 현금흐름 부담을 높임</span></li>
 <li><span class="summary-label">읽는 의미</span><span>생활비, 대출, 투자 비용 압력이 어디서 오는지 보여줌</span></li></ul>
               <p class="focus">금리, 물가, 정책 자금 흐름 확인</p>
-              <p class="quality">수치 근거 있음 · 검증 출처</p>
+              <p class="quality">의사결정 영향 있음 · 수치 근거 있음 · 검증 출처</p>
             </div>
           </article>
           
@@ -407,7 +487,7 @@
         <div class="section-head">
           <p>분양가, 전세, 세금, 공급 변화 확인</p>
           <h2>부동산/정책</h2>
-          <span>6개</span>
+          <span>4개</span>
         </div>
         <div class="article-list">
           
@@ -418,14 +498,14 @@
                 <span>이데일리</span>
                 <span>발행일 확인 필요</span>
               </div>
-              <h3><a href="https://www.edaily.co.kr/News/Read?newsId=04542806645450232&amp;mediaCodeNo=257">“상대적 저평가”…길음·장위뉴타운 앞세운 성북구 뜬다 최근 성북구 아파트 가격이 크게 오르며 서울 부동산 시장의 새로운 상승 축으로 부상하고 있다. 도심과 가까운 입지...</a></h3>
+              <h3><a href="https://www.edaily.co.kr/News/Read?newsId=03076646645450560&amp;mediaCodeNo=257">“고금리에 대출 규제·공사비까지”…서울 주택사업경기전망 ‘흐림’</a></h3>
               <ul><li><span class="summary-label">핵심 변화</span><span>서울 아파트 매물 잠김이 주요 이슈로 부상함</span></li>
 <li><span class="summary-label">배경</span><span>서울 아파트 매물 잠김은 주거비, 대출 여건, 공급 기대가 맞물릴 때 시장 판단을 바꿈</span></li>
-<li><span class="summary-label">근거</span><span>기사에는 15억원 같은 수치나 시점이 제시됨</span></li>
+<li><span class="summary-label">근거</span><span>기사 본문은 서울 아파트 매물 잠김 관련 시장 반응과 이해관계자 움직임을 제시함</span></li>
 <li><span class="summary-label">파급효과</span><span>실수요자, 임차인, 매수 대기자의 가격 판단과 자금 계획에 직접 작용함</span></li>
 <li><span class="summary-label">읽는 의미</span><span>자금 여건과 공급 흐름이 주거 판단의 핵심 변수임을 보여줌</span></li></ul>
               <p class="focus">분양가, 전세, 세금, 공급 변화 확인</p>
-              <p class="quality">의사결정 영향 있음 · 수치 근거 있음 · 부동산 실행 판단 연결</p>
+              <p class="quality">의사결정 영향 있음 · 수치 근거 있음 · 부동산 실행 판단 연결 · 관심 키워드 일치</p>
             </div>
           </article>
           
@@ -433,17 +513,17 @@
             <div class="item-index">06</div>
             <div class="item-body">
               <div class="meta">
-                <span>이데일리</span>
+                <span>머니투데이</span>
                 <span>발행일 확인 필요</span>
               </div>
-              <h3><a href="https://www.edaily.co.kr/News/Read?newsId=03332486645450232&amp;mediaCodeNo=257">서울 아파트 매매-전월세 가격 ‘동반 상승’ 서울 아파트 시장이 매매와 전세, 월세가 동시에 급등하는 이른바 &#x27;트리플 강세&#x27; 국면에 진입한 가운데 18일 서울시내의 한...</a></h3>
-              <ul><li><span class="summary-label">핵심 변화</span><span>서울 아파트 매물 잠김이 주요 이슈로 부상함</span></li>
-<li><span class="summary-label">배경</span><span>서울 아파트 매물 잠김은 주거비, 대출 여건, 공급 기대가 맞물릴 때 시장 판단을 바꿈</span></li>
-<li><span class="summary-label">근거</span><span>기사에는 3.10%, 2배, 18일 같은 수치나 시점이 제시됨</span></li>
+              <h3><a href="https://www.mt.co.kr/estate/2026/05/19/2026051908490065960">&quot;연 3% 이자 지원&quot;…서울시, 청년 전세대출 지원 문턱 낮춘다 서울시가 청년 무주택자의 전세대출 이자 지원 문턱을 낮춘다. 최근 전월세 부담이 커지는 상황을 반영해...</a></h3>
+              <ul><li><span class="summary-label">핵심 변화</span><span>서울 주택 공급 계획이 주요 이슈로 부상함</span></li>
+<li><span class="summary-label">배경</span><span>서울 주택 공급 계획은 주거비, 대출 여건, 공급 기대가 맞물릴 때 시장 판단을 바꿈</span></li>
+<li><span class="summary-label">근거</span><span>기사에는 3%, 19일 같은 수치나 시점이 제시됨</span></li>
 <li><span class="summary-label">파급효과</span><span>실수요자, 임차인, 매수 대기자의 가격 판단과 자금 계획에 직접 작용함</span></li>
 <li><span class="summary-label">읽는 의미</span><span>자금 여건과 공급 흐름이 주거 판단의 핵심 변수임을 보여줌</span></li></ul>
               <p class="focus">분양가, 전세, 세금, 공급 변화 확인</p>
-              <p class="quality">의사결정 영향 있음 · 수치 근거 있음 · 부동산 실행 판단 연결</p>
+              <p class="quality">의사결정 영향 있음 · 수치 근거 있음 · 요약 근거 충분 · 부동산 실행 판단 연결</p>
             </div>
           </article>
           
@@ -451,17 +531,17 @@
             <div class="item-index">07</div>
             <div class="item-body">
               <div class="meta">
-                <span>이데일리</span>
+                <span>머니투데이</span>
                 <span>발행일 확인 필요</span>
               </div>
-              <h3><a href="https://www.edaily.co.kr/News/Read?newsId=03325926645450232&amp;mediaCodeNo=257">서울 아파트 매매·전월세 ‘트리플 불안’ 심상치 않다 서울 아파트 시장이 매매와 전세, 월세가 동시에 급등하는 이른바 &#x27;트리플 강세&#x27; 국면에 진입한 가운데 18일 서울...</a></h3>
-              <ul><li><span class="summary-label">핵심 변화</span><span>서울 아파트 매물 잠김이 주요 이슈로 부상함</span></li>
-<li><span class="summary-label">배경</span><span>서울 아파트 매물 잠김은 주거비, 대출 여건, 공급 기대가 맞물릴 때 시장 판단을 바꿈</span></li>
-<li><span class="summary-label">근거</span><span>기사에는 3.10%, 2배, 18일 같은 수치나 시점이 제시됨</span></li>
+              <h3><a href="https://www.mt.co.kr/estate/2026/05/19/2026051819300326517">&quot;그냥 더 살자&quot; 늘어나는 &#x27;눌러앉기&#x27;…전세난 공포에 갱신권은 최후의 수단 전세 연장 확산에도 계약갱신청구권 사용비율 하락 세입자들, 시장 사정 악화 대비 &#x27;일반 재계...</a></h3>
+              <ul><li><span class="summary-label">핵심 변화</span><span>전세시장 수급 불안이 주요 이슈로 부상함</span></li>
+<li><span class="summary-label">배경</span><span>전세시장 수급 불안은 주거비, 대출 여건, 공급 기대가 맞물릴 때 시장 판단을 바꿈</span></li>
+<li><span class="summary-label">근거</span><span>기사 본문은 전세시장 수급 불안 관련 시장 반응과 이해관계자 움직임을 제시함</span></li>
 <li><span class="summary-label">파급효과</span><span>실수요자, 임차인, 매수 대기자의 가격 판단과 자금 계획에 직접 작용함</span></li>
 <li><span class="summary-label">읽는 의미</span><span>자금 여건과 공급 흐름이 주거 판단의 핵심 변수임을 보여줌</span></li></ul>
               <p class="focus">분양가, 전세, 세금, 공급 변화 확인</p>
-              <p class="quality">의사결정 영향 있음 · 수치 근거 있음 · 부동산 실행 판단 연결</p>
+              <p class="quality">의사결정 영향 있음 · 수치 근거 있음 · 요약 근거 충분 · 부동산 실행 판단 연결</p>
             </div>
           </article>
           
@@ -469,53 +549,17 @@
             <div class="item-index">08</div>
             <div class="item-body">
               <div class="meta">
-                <span>이데일리</span>
-                <span>발행일 확인 필요</span>
-              </div>
-              <h3><a href="https://www.edaily.co.kr/News/Read?newsId=03329206645450232&amp;mediaCodeNo=257">양도세 중과에 매매·전월세 줄줄이 강세 서울 아파트 시장이 매매와 전세, 월세가 동시에 급등하는 이른바 &#x27;트리플 강세&#x27; 국면에 진입한 가운데 18일 서울시내의 한 공인...</a></h3>
-              <ul><li><span class="summary-label">핵심 변화</span><span>서울 아파트 매물 잠김이 주요 이슈로 부상함</span></li>
-<li><span class="summary-label">배경</span><span>서울 아파트 매물 잠김은 주거비, 대출 여건, 공급 기대가 맞물릴 때 시장 판단을 바꿈</span></li>
-<li><span class="summary-label">근거</span><span>기사에는 3.10%, 2배, 18일 같은 수치나 시점이 제시됨</span></li>
-<li><span class="summary-label">파급효과</span><span>실수요자, 임차인, 매수 대기자의 가격 판단과 자금 계획에 직접 작용함</span></li>
-<li><span class="summary-label">읽는 의미</span><span>자금 여건과 공급 흐름이 주거 판단의 핵심 변수임을 보여줌</span></li></ul>
-              <p class="focus">분양가, 전세, 세금, 공급 변화 확인</p>
-              <p class="quality">의사결정 영향 있음 · 수치 근거 있음 · 부동산 실행 판단 연결</p>
-            </div>
-          </article>
-          
-          <article class="item" id="article-09">
-            <div class="item-index">09</div>
-            <div class="item-body">
-              <div class="meta">
-                <span>이데일리</span>
-                <span>발행일 확인 필요</span>
-              </div>
-              <h3><a href="https://www.edaily.co.kr/News/Read?newsId=03322646645450232&amp;mediaCodeNo=257">서울 집값 다시 불붙나 서울 아파트 시장이 매매와 전세, 월세가 동시에 급등하는 이른바 &#x27;트리플 강세&#x27; 국면에 진입한 가운데 18일 서울시내의 한 공인중개사에 매물현황...</a></h3>
-              <ul><li><span class="summary-label">핵심 변화</span><span>서울 아파트 매물 잠김이 주요 이슈로 부상함</span></li>
-<li><span class="summary-label">배경</span><span>서울 아파트 매물 잠김은 주거비, 대출 여건, 공급 기대가 맞물릴 때 시장 판단을 바꿈</span></li>
-<li><span class="summary-label">근거</span><span>기사에는 3.10%, 2배, 18일 같은 수치나 시점이 제시됨</span></li>
-<li><span class="summary-label">파급효과</span><span>실수요자, 임차인, 매수 대기자의 가격 판단과 자금 계획에 직접 작용함</span></li>
-<li><span class="summary-label">읽는 의미</span><span>자금 여건과 공급 흐름이 주거 판단의 핵심 변수임을 보여줌</span></li></ul>
-              <p class="focus">분양가, 전세, 세금, 공급 변화 확인</p>
-              <p class="quality">의사결정 영향 있음 · 수치 근거 있음 · 부동산 실행 판단 연결</p>
-            </div>
-          </article>
-          
-          <article class="item" id="article-10">
-            <div class="item-index">10</div>
-            <div class="item-body">
-              <div class="meta">
                 <span>머니투데이</span>
                 <span>발행일 확인 필요</span>
               </div>
-              <h3><a href="https://www.mt.co.kr/estate/2026/05/11/2026051018235786987">&quot;이제 월세도 받을래요&quot; 이런 집주인 늘었다...씨 마른 전세</a></h3>
-              <ul><li><span class="summary-label">핵심 변화</span><span>전세시장 수급 불안이 주요 이슈로 부상함</span></li>
-<li><span class="summary-label">배경</span><span>전세시장 수급 불안은 주거비, 대출 여건, 공급 기대가 맞물릴 때 시장 판단을 바꿈</span></li>
-<li><span class="summary-label">근거</span><span>기사 본문은 전세시장 수급 불안 관련 시장 반응과 이해관계자 움직임을 제시함</span></li>
+              <h3><a href="https://www.mt.co.kr/estate/2026/05/19/2026051819300278580">&quot;아파트 포기, 빌라로 이사 가자&quot;…강남까지 번진 전세난 비아파트매매 전년比 21.6%↑ 착공물량 3%↓… 수요 못 따라 서울 아파트 전세난이 강남권까지 확산하면서 상...</a></h3>
+              <ul><li><span class="summary-label">핵심 변화</span><span>서울 주택 공급 계획이 주요 이슈로 부상함</span></li>
+<li><span class="summary-label">배경</span><span>서울 주택 공급 계획은 주거비, 대출 여건, 공급 기대가 맞물릴 때 시장 판단을 바꿈</span></li>
+<li><span class="summary-label">근거</span><span>기사에는 21.6%, 3%, 18일 같은 수치나 시점이 제시됨</span></li>
 <li><span class="summary-label">파급효과</span><span>실수요자, 임차인, 매수 대기자의 가격 판단과 자금 계획에 직접 작용함</span></li>
 <li><span class="summary-label">읽는 의미</span><span>자금 여건과 공급 흐름이 주거 판단의 핵심 변수임을 보여줌</span></li></ul>
               <p class="focus">분양가, 전세, 세금, 공급 변화 확인</p>
-              <p class="quality">의사결정 영향 있음 · 부동산 실행 판단 연결</p>
+              <p class="quality">의사결정 영향 있음 · 수치 근거 있음 · 요약 근거 충분 · 부동산 실행 판단 연결</p>
             </div>
           </article>
           
@@ -530,17 +574,53 @@
         </div>
         <div class="article-list">
           
+          <article class="item" id="article-09">
+            <div class="item-index">09</div>
+            <div class="item-body">
+              <div class="meta">
+                <span>미국 경제분석국(BEA)</span>
+                <span>Thu, 30 Apr 2026 08:30:00 EDT</span>
+              </div>
+              <h3><a href="https://www.bea.gov/news/2026/gdp-advance-estimate-1st-quarter-2026">2026년 1분기 미국 GDP 속보치</a></h3>
+              <ul><li><span class="summary-label">핵심 변화</span><span>미국 성장률 흐름이 주요 이슈로 부상함</span></li>
+<li><span class="summary-label">배경</span><span>미국 성장률 흐름은 미국 소비와 금리 기대를 통해 한국 환율과 투자심리에 이어짐</span></li>
+<li><span class="summary-label">근거</span><span>기사에는 연율 2.0%, 2026년 같은 수치나 시점이 제시됨</span></li>
+<li><span class="summary-label">파급효과</span><span>국내 투자자와 사업자의 환율, 수출, 자금시장 전망에 간접 충격을 줌</span></li>
+<li><span class="summary-label">읽는 의미</span><span>미국 지표가 한국 금리, 환율, 자산시장에 번지는 경로를 보여줌</span></li></ul>
+              <p class="focus">미국 금리와 경기 지표가 국내 시장에 미칠 영향 확인</p>
+              <p class="quality">수치 근거 있음 · 검증 출처 · 요약 근거 충분 · 미국 핵심 지표</p>
+            </div>
+          </article>
+          
+          <article class="item" id="article-10">
+            <div class="item-index">10</div>
+            <div class="item-body">
+              <div class="meta">
+                <span>미국 경제분석국(BEA)</span>
+                <span>Thu, 05 Feb 2026 08:30:00 EST</span>
+              </div>
+              <h3><a href="https://www.bea.gov/news/2026/gross-domestic-product-county-and-personal-income-county-2024">2024년 미국 카운티별 GDP 및 개인소득</a></h3>
+              <ul><li><span class="summary-label">핵심 변화</span><span>미국 지역별 경기 격차가 주요 이슈로 부상함</span></li>
+<li><span class="summary-label">배경</span><span>미국 지역별 경기 격차는 미국 소비와 금리 기대를 통해 한국 환율과 투자심리에 이어짐</span></li>
+<li><span class="summary-label">근거</span><span>기사에는 2024년 같은 수치나 시점이 제시됨</span></li>
+<li><span class="summary-label">파급효과</span><span>국내 투자자와 사업자의 환율, 수출, 자금시장 전망에 간접 충격을 줌</span></li>
+<li><span class="summary-label">읽는 의미</span><span>미국 지표가 한국 금리, 환율, 자산시장에 번지는 경로를 보여줌</span></li></ul>
+              <p class="focus">미국 금리와 경기 지표가 국내 시장에 미칠 영향 확인</p>
+              <p class="quality">의사결정 영향 있음 · 수치 근거 있음 · 검증 출처 · 요약 근거 충분 · 미국 핵심 지표</p>
+            </div>
+          </article>
+          
           <article class="item" id="article-11">
             <div class="item-index">11</div>
             <div class="item-body">
               <div class="meta">
                 <span>미국 경제분석국(BEA)</span>
-                <span>Thu, 19 Feb 2026 08:30:00 EST</span>
+                <span>Fri, 20 Feb 2026 08:30:00 EST</span>
               </div>
-              <h3><a href="https://www.bea.gov/news/2026/real-personal-consumption-expenditures-state-and-real-personal-income-state-2024">Real Personal Consumption Expenditures by State and Real Personal Income by State, 2024</a></h3>
-              <ul><li><span class="summary-label">핵심 변화</span><span>미국 개인소득과 소비 여력이 주요 이슈로 부상함</span></li>
-<li><span class="summary-label">배경</span><span>미국 개인소득과 소비 여력은 미국 소비와 금리 기대를 통해 한국 환율과 투자심리에 이어짐</span></li>
-<li><span class="summary-label">근거</span><span>공식 발표 자료를 통해 미국 개인소득과 소비 여력 관련 변화가 확인됨</span></li>
+              <h3><a href="https://www.bea.gov/news/2026/gdp-advance-estimate-4th-quarter-and-year-2025">2025년 4분기 및 연간 미국 GDP 속보치</a></h3>
+              <ul><li><span class="summary-label">핵심 변화</span><span>미국 성장률 흐름이 주요 이슈로 부상함</span></li>
+<li><span class="summary-label">배경</span><span>미국 성장률 흐름은 미국 소비와 금리 기대를 통해 한국 환율과 투자심리에 이어짐</span></li>
+<li><span class="summary-label">근거</span><span>기사에는 연율 1.4%, 2025년 같은 수치나 시점이 제시됨</span></li>
 <li><span class="summary-label">파급효과</span><span>국내 투자자와 사업자의 환율, 수출, 자금시장 전망에 간접 충격을 줌</span></li>
 <li><span class="summary-label">읽는 의미</span><span>미국 지표가 한국 금리, 환율, 자산시장에 번지는 경로를 보여줌</span></li></ul>
               <p class="focus">미국 금리와 경기 지표가 국내 시장에 미칠 영향 확인</p>
@@ -553,12 +633,12 @@
             <div class="item-body">
               <div class="meta">
                 <span>미국 경제분석국(BEA)</span>
-                <span>Fri, 20 Feb 2026 08:30:00 EST</span>
+                <span>Tue, 05 May 2026 08:30:00 EDT</span>
               </div>
-              <h3><a href="https://www.bea.gov/news/2026/personal-income-and-outlays-december-2025">Personal Income and Outlays, December 2025</a></h3>
-              <ul><li><span class="summary-label">핵심 변화</span><span>미국 개인소득과 소비 여력이 주요 이슈로 부상함</span></li>
-<li><span class="summary-label">배경</span><span>미국 개인소득과 소비 여력은 미국 소비와 금리 기대를 통해 한국 환율과 투자심리에 이어짐</span></li>
-<li><span class="summary-label">근거</span><span>공식 발표 자료를 통해 미국 개인소득과 소비 여력 관련 변화가 확인됨</span></li>
+              <h3><a href="https://www.bea.gov/news/2026/us-international-trade-goods-and-services-march-2026">2026년 3월 미국 상품·서비스 국제무역</a></h3>
+              <ul><li><span class="summary-label">핵심 변화</span><span>미국 무역수지 흐름이 주요 이슈로 부상함</span></li>
+<li><span class="summary-label">배경</span><span>미국 무역수지 흐름은 미국 소비와 금리 기대를 통해 한국 환율과 투자심리에 이어짐</span></li>
+<li><span class="summary-label">근거</span><span>기사에는 2026년 3월 같은 수치나 시점이 제시됨</span></li>
 <li><span class="summary-label">파급효과</span><span>국내 투자자와 사업자의 환율, 수출, 자금시장 전망에 간접 충격을 줌</span></li>
 <li><span class="summary-label">읽는 의미</span><span>미국 지표가 한국 금리, 환율, 자산시장에 번지는 경로를 보여줌</span></li></ul>
               <p class="focus">미국 금리와 경기 지표가 국내 시장에 미칠 영향 확인</p>
@@ -571,52 +651,16 @@
             <div class="item-body">
               <div class="meta">
                 <span>미국 경제분석국(BEA)</span>
-                <span>Fri, 13 Mar 2026 08:31:00 EDT</span>
+                <span>Thu, 30 Apr 2026 08:30:00 EDT</span>
               </div>
-              <h3><a href="https://www.bea.gov/news/2026/personal-income-and-outlays-january-2026">Personal Income and Outlays, January 2026</a></h3>
+              <h3><a href="https://www.bea.gov/news/2026/personal-income-and-outlays-march-2026">2026년 3월 미국 개인소득 및 지출</a></h3>
               <ul><li><span class="summary-label">핵심 변화</span><span>미국 개인소득과 소비 여력이 주요 이슈로 부상함</span></li>
 <li><span class="summary-label">배경</span><span>미국 개인소득과 소비 여력은 미국 소비와 금리 기대를 통해 한국 환율과 투자심리에 이어짐</span></li>
-<li><span class="summary-label">근거</span><span>공식 발표 자료를 통해 미국 개인소득과 소비 여력 관련 변화가 확인됨</span></li>
+<li><span class="summary-label">근거</span><span>기사에는 0.6%, 2026년 3월 같은 수치나 시점이 제시됨</span></li>
 <li><span class="summary-label">파급효과</span><span>국내 투자자와 사업자의 환율, 수출, 자금시장 전망에 간접 충격을 줌</span></li>
 <li><span class="summary-label">읽는 의미</span><span>미국 지표가 한국 금리, 환율, 자산시장에 번지는 경로를 보여줌</span></li></ul>
               <p class="focus">미국 금리와 경기 지표가 국내 시장에 미칠 영향 확인</p>
               <p class="quality">수치 근거 있음 · 검증 출처 · 요약 근거 충분 · 미국 핵심 지표</p>
-            </div>
-          </article>
-          
-          <article class="item" id="article-14">
-            <div class="item-index">14</div>
-            <div class="item-body">
-              <div class="meta">
-                <span>미국 경제분석국(BEA)</span>
-                <span>Thu, 05 Mar 2026 10:00:00 EST</span>
-              </div>
-              <h3><a href="https://www.bea.gov/news/2026/outdoor-recreation-economic-statistics-us-and-states-2024">2024년 미국 및 주별 야외 레크리에이션 경제 통계</a></h3>
-              <ul><li><span class="summary-label">핵심 변화</span><span>미국 성장률 흐름이 주요 이슈로 부상함</span></li>
-<li><span class="summary-label">배경</span><span>미국 성장률 흐름은 미국 소비와 금리 기대를 통해 한국 환율과 투자심리에 이어짐</span></li>
-<li><span class="summary-label">근거</span><span>기사에는 2.4%, 2024년 같은 수치나 시점이 제시됨</span></li>
-<li><span class="summary-label">파급효과</span><span>국내 투자자와 사업자의 환율, 수출, 자금시장 전망에 간접 충격을 줌</span></li>
-<li><span class="summary-label">읽는 의미</span><span>미국 지표가 한국 금리, 환율, 자산시장에 번지는 경로를 보여줌</span></li></ul>
-              <p class="focus">미국 금리와 경기 지표가 국내 시장에 미칠 영향 확인</p>
-              <p class="quality">수치 근거 있음 · 검증 출처 · 요약 근거 충분 · 미국 핵심 지표</p>
-            </div>
-          </article>
-          
-          <article class="item" id="article-15">
-            <div class="item-index">15</div>
-            <div class="item-body">
-              <div class="meta">
-                <span>미국 연방준비제도(Fed) 보도자료</span>
-                <span>Wed, 13 May 2026 15:30:00 GMT</span>
-              </div>
-              <h3><a href="https://www.federalreserve.gov/newsevents/pressreleases/other20260513a.htm">연준, 2025년 미국 가계 경제생활 보고서 발표</a></h3>
-              <ul><li><span class="summary-label">핵심 변화</span><span>연준, 2025년 미국 가계 경제생활 보고서 발표가 주요 이슈로 부상함</span></li>
-<li><span class="summary-label">배경</span><span>연준, 2025년 미국 가계 경제생활 보고서 발표는 미국 소비와 금리 기대를 통해 한국 환율과 투자심리에 이어짐</span></li>
-<li><span class="summary-label">근거</span><span>기사에는 2025년 같은 수치나 시점이 제시됨</span></li>
-<li><span class="summary-label">파급효과</span><span>국내 투자자와 사업자의 환율, 수출, 자금시장 전망에 간접 충격을 줌</span></li>
-<li><span class="summary-label">읽는 의미</span><span>미국 지표가 한국 금리, 환율, 자산시장에 번지는 경로를 보여줌</span></li></ul>
-              <p class="focus">미국 금리와 경기 지표가 국내 시장에 미칠 영향 확인</p>
-              <p class="quality">수치 근거 있음 · 검증 출처 · 미국 핵심 지표</p>
             </div>
           </article>
           
@@ -630,6 +674,42 @@
           <span>3개</span>
         </div>
         <div class="article-list">
+          
+          <article class="item" id="article-14">
+            <div class="item-index">14</div>
+            <div class="item-body">
+              <div class="meta">
+                <span>스타트업레시피</span>
+                <span>Mon, 18 May 2026 23:58:51 +0000</span>
+              </div>
+              <h3><a href="https://startuprecipe.co.kr/archives/5817485">[AI서머리] 오르빗코리아, 프리시드 투자 유치‧셀렉트스타, 日 AI 시장 공략</a></h3>
+              <ul><li><span class="summary-label">핵심 변화</span><span>벤처투자와 정책금융 회복이 주요 이슈로 부상함</span></li>
+<li><span class="summary-label">배경</span><span>벤처투자와 정책금융 회복은 자금 조달, 지원사업, 시장 진입 기회가 변할 때 중요해짐</span></li>
+<li><span class="summary-label">근거</span><span>기사 본문은 벤처투자와 정책금융 회복 관련 시장 반응과 이해관계자 움직임을 제시함</span></li>
+<li><span class="summary-label">파급효과</span><span>창업자와 중소기업의 자금 접근성, 지원사업 활용, 시장 진입 속도를 바꿈</span></li>
+<li><span class="summary-label">읽는 의미</span><span>사업자가 활용할 수 있는 정책·투자 흐름과 시장 기회를 보여줌</span></li></ul>
+              <p class="focus">투자, 지원사업, 사업 기회 변화 확인</p>
+              <p class="quality">수치 근거 있음 · 요약 근거 충분 · 사업 실행 힌트</p>
+            </div>
+          </article>
+          
+          <article class="item" id="article-15">
+            <div class="item-index">15</div>
+            <div class="item-body">
+              <div class="meta">
+                <span>벤처스퀘어</span>
+                <span>Mon, 18 May 2026 14:37:02 +0000</span>
+              </div>
+              <h3><a href="https://www.venturesquare.net/1083089/">“AI 잘 쓰는 마케터가 경쟁력”…원티드랩, ‘마케터 AX 챌린지’ 참가자 모집</a></h3>
+              <ul><li><span class="summary-label">핵심 변화</span><span>사업 지원 기회가 주요 이슈로 부상함</span></li>
+<li><span class="summary-label">배경</span><span>사업 지원 기회는 자금 조달, 지원사업, 시장 진입 기회가 변할 때 중요해짐</span></li>
+<li><span class="summary-label">근거</span><span>기사 본문은 사업 지원 기회 관련 시장 반응과 이해관계자 움직임을 제시함</span></li>
+<li><span class="summary-label">파급효과</span><span>창업자와 중소기업의 자금 접근성, 지원사업 활용, 시장 진입 속도를 바꿈</span></li>
+<li><span class="summary-label">읽는 의미</span><span>사업자가 활용할 수 있는 정책·투자 흐름과 시장 기회를 보여줌</span></li></ul>
+              <p class="focus">투자, 지원사업, 사업 기회 변화 확인</p>
+              <p class="quality">의사결정 영향 있음 · 관심 키워드 일치</p>
+            </div>
+          </article>
           
           <article class="item" id="article-16">
             <div class="item-index">16</div>
@@ -649,21 +729,32 @@
             </div>
           </article>
           
+        </div>
+      </section>
+            
+      <section class="section">
+        <div class="section-head">
+          <p>AI가 산업, 비용, 생산성에 주는 변화 확인</p>
+          <h2>AI 영향</h2>
+          <span>3개</span>
+        </div>
+        <div class="article-list">
+          
           <article class="item" id="article-17">
             <div class="item-index">17</div>
             <div class="item-body">
               <div class="meta">
-                <span>스타트업레시피</span>
-                <span>Tue, 19 May 2026 00:22:07 +0000</span>
+                <span>요즘IT</span>
+                <span>발행일 확인 필요</span>
               </div>
-              <h3><a href="https://startuprecipe.co.kr/archives/5817509">[AI서머리] 피처링, 153억 시리즈B‧사용자 판단 예측 AI 클론랩스 투자 유치</a></h3>
-              <ul><li><span class="summary-label">핵심 변화</span><span>벤처투자와 정책금융 회복이 주요 이슈로 부상함</span></li>
-<li><span class="summary-label">배경</span><span>벤처투자와 정책금융 회복은 자금 조달, 지원사업, 시장 진입 기회가 변할 때 중요해짐</span></li>
-<li><span class="summary-label">근거</span><span>기사에는 50명, 6월 30일, 7월 6일 같은 수치나 시점이 제시됨</span></li>
-<li><span class="summary-label">파급효과</span><span>창업자와 중소기업의 자금 접근성, 지원사업 활용, 시장 진입 속도를 바꿈</span></li>
-<li><span class="summary-label">읽는 의미</span><span>사업자가 활용할 수 있는 정책·투자 흐름과 시장 기회를 보여줌</span></li></ul>
-              <p class="focus">투자, 지원사업, 사업 기회 변화 확인</p>
-              <p class="quality">수치 근거 있음 · 요약 근거 충분 · 사업 실행 힌트</p>
+              <h3><a href="https://yozm.wishket.com/magazine/detail/3759/">일본 IT 기업의 HR 담당자가 AI로 업무를 혁신한 방법</a></h3>
+              <ul><li><span class="summary-label">핵심 변화</span><span>AI 에이전트 확산이 주요 이슈로 부상함</span></li>
+<li><span class="summary-label">배경</span><span>AI 에이전트 확산은 자동화 기술이 비용, 속도, 인력 배치 방식을 바꾸며 부각됨</span></li>
+<li><span class="summary-label">근거</span><span>기사 본문은 AI 에이전트 확산 관련 시장 반응과 이해관계자 움직임을 제시함</span></li>
+<li><span class="summary-label">파급효과</span><span>기업과 개인의 업무 방식, 비용 구조, 경쟁력의 기준을 바꿈</span></li>
+<li><span class="summary-label">읽는 의미</span><span>AI가 비용 구조와 산업 경쟁을 바꾸는 방식을 보여줌</span></li></ul>
+              <p class="focus">AI가 산업, 비용, 생산성에 주는 변화 확인</p>
+              <p class="quality">수치 근거 있음 · 요약 근거 충분 · AI 파급 경로 명확 · 관심 키워드 일치</p>
             </div>
           </article>
           
@@ -671,17 +762,35 @@
             <div class="item-index">18</div>
             <div class="item-body">
               <div class="meta">
-                <span>아웃스탠딩</span>
-                <span>Mon, 18 May 2026 00:20:50 +0000</span>
+                <span>스타트업레시피</span>
+                <span>Tue, 19 May 2026 00:00:00 +0000</span>
               </div>
-              <h3><a href="https://outstanding.kr/localvc20250518">정부 지원은 늘어나는데.. 왜 지역 스타트업 투자는 계속 어려울까</a></h3>
-              <ul><li><span class="summary-label">핵심 변화</span><span>벤처투자와 정책금융 회복이 주요 이슈로 부상함</span></li>
-<li><span class="summary-label">배경</span><span>벤처투자와 정책금융 회복은 자금 조달, 지원사업, 시장 진입 기회가 변할 때 중요해짐</span></li>
-<li><span class="summary-label">근거</span><span>기사 본문은 벤처투자와 정책금융 회복 관련 시장 반응과 이해관계자 움직임을 제시함</span></li>
-<li><span class="summary-label">파급효과</span><span>창업자와 중소기업의 자금 접근성, 지원사업 활용, 시장 진입 속도를 바꿈</span></li>
-<li><span class="summary-label">읽는 의미</span><span>사업자가 활용할 수 있는 정책·투자 흐름과 시장 기회를 보여줌</span></li></ul>
-              <p class="focus">투자, 지원사업, 사업 기회 변화 확인</p>
-              <p class="quality">수치 근거 있음 · 사업 실행 힌트</p>
+              <h3><a href="https://startuprecipe.co.kr/archives/5816692">스웨덴 AI 스타트업 피트, a16z 주도로 1,600만 달러 투자 유치</a></h3>
+              <ul><li><span class="summary-label">핵심 변화</span><span>AI 에이전트 확산이 주요 이슈로 부상함</span></li>
+<li><span class="summary-label">배경</span><span>AI 에이전트 확산은 자동화 기술이 비용, 속도, 인력 배치 방식을 바꾸며 부각됨</span></li>
+<li><span class="summary-label">근거</span><span>기사 본문은 AI 에이전트 확산 관련 시장 반응과 이해관계자 움직임을 제시함</span></li>
+<li><span class="summary-label">파급효과</span><span>기업과 개인의 업무 방식, 비용 구조, 경쟁력의 기준을 바꿈</span></li>
+<li><span class="summary-label">읽는 의미</span><span>AI가 비용 구조와 산업 경쟁을 바꾸는 방식을 보여줌</span></li></ul>
+              <p class="focus">AI가 산업, 비용, 생산성에 주는 변화 확인</p>
+              <p class="quality">의사결정 영향 있음 · 수치 근거 있음 · 요약 근거 충분 · AI 파급 경로 명확 · 관심 키워드 일치</p>
+            </div>
+          </article>
+          
+          <article class="item" id="article-19">
+            <div class="item-index">19</div>
+            <div class="item-body">
+              <div class="meta">
+                <span>요즘IT</span>
+                <span>발행일 확인 필요</span>
+              </div>
+              <h3><a href="https://yozm.wishket.com/magazine/detail/3756/">‘쓸수록 나아진다’는 그 AI, Hermes Agent 제대로 알아보기</a></h3>
+              <ul><li><span class="summary-label">핵심 변화</span><span>AI 에이전트 확산이 주요 이슈로 부상함</span></li>
+<li><span class="summary-label">배경</span><span>AI 에이전트 확산은 자동화 기술이 비용, 속도, 인력 배치 방식을 바꾸며 부각됨</span></li>
+<li><span class="summary-label">근거</span><span>기사에는 5월 10일 같은 수치나 시점이 제시됨</span></li>
+<li><span class="summary-label">파급효과</span><span>기업과 개인의 업무 방식, 비용 구조, 경쟁력의 기준을 바꿈</span></li>
+<li><span class="summary-label">읽는 의미</span><span>AI가 비용 구조와 산업 경쟁을 바꾸는 방식을 보여줌</span></li></ul>
+              <p class="focus">AI가 산업, 비용, 생산성에 주는 변화 확인</p>
+              <p class="quality">수치 근거 있음 · 요약 근거 충분 · 관심 키워드 일치</p>
             </div>
           </article>
           
@@ -690,45 +799,27 @@
             
       <section class="section">
         <div class="section-head">
-          <p>AI가 산업, 비용, 생산성에 주는 변화 확인</p>
-          <h2>AI 영향</h2>
-          <span>2개</span>
+          <p>개인 관심 키워드 변화 확인</p>
+          <h2>관심 키워드</h2>
+          <span>1개</span>
         </div>
         <div class="article-list">
-          
-          <article class="item" id="article-19">
-            <div class="item-index">19</div>
-            <div class="item-body">
-              <div class="meta">
-                <span>MIT 테크놀로지 리뷰 AI</span>
-                <span>Thu, 14 May 2026 13:00:00 +0000</span>
-              </div>
-              <h3><a href="https://www.technologyreview.com/2026/05/14/1137034/data-readiness-for-agentic-ai-in-financial-services/">금융 서비스에서 에이전트형 AI를 위한 데이터 준비</a></h3>
-              <ul><li><span class="summary-label">핵심 변화</span><span>AI 에이전트 확산이 주요 이슈로 부상함</span></li>
-<li><span class="summary-label">배경</span><span>AI 에이전트 확산은 자동화 기술이 비용, 속도, 인력 배치 방식을 바꾸며 부각됨</span></li>
-<li><span class="summary-label">근거</span><span>기사 본문은 AI 에이전트 확산 관련 시장 반응과 이해관계자 움직임을 제시함</span></li>
-<li><span class="summary-label">파급효과</span><span>기업과 개인의 업무 방식, 비용 구조, 경쟁력의 기준을 바꿈</span></li>
-<li><span class="summary-label">읽는 의미</span><span>AI가 비용 구조와 산업 경쟁을 바꾸는 방식을 보여줌</span></li></ul>
-              <p class="focus">AI가 산업, 비용, 생산성에 주는 변화 확인</p>
-              <p class="quality">검증 출처 · 요약 근거 충분</p>
-            </div>
-          </article>
           
           <article class="item" id="article-20">
             <div class="item-index">20</div>
             <div class="item-body">
               <div class="meta">
-                <span>MIT 테크놀로지 리뷰 AI</span>
-                <span>Thu, 14 May 2026 13:00:00 +0000</span>
+                <span>이데일리</span>
+                <span>발행일 확인 필요</span>
               </div>
-              <h3><a href="https://www.technologyreview.com/2026/05/14/1137168/establishing-ai-and-data-sovereignty-in-the-age-of-autonomous-systems/">자율 시스템 시대의 AI와 데이터 주권 확립</a></h3>
-              <ul><li><span class="summary-label">핵심 변화</span><span>자율 시스템 시대의 AI와 데이터 주권 확립이 주요 이슈로 부상함</span></li>
-<li><span class="summary-label">배경</span><span>자율 시스템 시대의 AI와 데이터 주권 확립은 자동화 기술이 비용, 속도, 인력 배치 방식을 바꾸며 부각됨</span></li>
-<li><span class="summary-label">근거</span><span>기사 본문은 자율 시스템 시대의 AI와 데이터 주권 확립 관련 시장 반응과 이해관계자 움직임을 제시함</span></li>
-<li><span class="summary-label">파급효과</span><span>기업과 개인의 업무 방식, 비용 구조, 경쟁력의 기준을 바꿈</span></li>
-<li><span class="summary-label">읽는 의미</span><span>AI가 비용 구조와 산업 경쟁을 바꾸는 방식을 보여줌</span></li></ul>
-              <p class="focus">AI가 산업, 비용, 생산성에 주는 변화 확인</p>
-              <p class="quality">검증 출처 · 요약 근거 충분</p>
+              <h3><a href="https://www.edaily.co.kr/News/Read?newsId=03493206645450232&amp;mediaCodeNo=257">우미건설, ‘고양 창릉 우미린 그레니티’ 견본주택 열고 본청약 돌입 우미건설이 3기 신도시 고양 창릉지구에 공급하는 민간참여 공공분양 아파트 ‘고양 창릉 우미린 그레니...</a></h3>
+              <ul><li><span class="summary-label">핵심 변화</span><span>우미건설, ‘고양 창릉 우미린 그레니티’ 견본주택 열고 본청약 돌입 우미건설이 3기 신도시 고양 창릉지구에 공급하는 민간참여...가 주요 이슈로 부상함</span></li>
+<li><span class="summary-label">배경</span><span>우미건설, ‘고양 창릉 우미린 그레니티’ 견본주택 열고 본청약 돌입 우미건설이 3기 신도시 고양 창릉지구에 공급하는 민간참여...는 사용자의 관심 키워드와 실제 시장 변화가 만나는 지점이 됨</span></li>
+<li><span class="summary-label">근거</span><span>기사에는 18일 같은 수치나 시점이 제시됨</span></li>
+<li><span class="summary-label">파급효과</span><span>관심 분야의 실제 적용 시점과 후속 의사결정에 영향을 줌</span></li>
+<li><span class="summary-label">읽는 의미</span><span>관심 키워드가 실제 의사결정에 연결되는 변화인지 보여줌</span></li></ul>
+              <p class="focus">개인 관심 키워드 변화 확인</p>
+              <p class="quality">수치 근거 있음 · 관심도 낮은 소재 · 관심 키워드 일치</p>
             </div>
           </article>
           
@@ -740,7 +831,10 @@
 <li>platum: skipped:search_api</li>
 <li>byline: skipped:search_api</li>
 <li>r114: skipped:deferred</li>
-<li>bok_press: [보도자료] 신현송 한국은행 총재-박홍근 기획예산처 장관 회동 결과 링크 검증 실패 (HTTPError: 404)</li></ul></section>
+<li>bok_press: [보도자료] 신현송 한국은행 총재-박홍근 기획예산처 장관 회동 결과 링크 검증 실패 (HTTPError: 404)</li>
+<li>outstanding: 삼일PwC와 함께 AI 네이티브 팀으로 급성장할 스타트업을 모집합니다 (~5 링크 검증 실패 (URLError: &lt;urlopen error _ssl.c:1112: The handshake operation timed out&gt;)</li>
+<li>bea_news: Real Personal Consumption Expenditures by  링크 검증 실패 (timeout: The read operation timed out)</li>
+<li>techcrunch: Apple’s Siri revamp could include auto-del 링크 검증 실패 (timeout: The read operation timed out)</li></ul></section>
   </main>
 </body>
 </html>
